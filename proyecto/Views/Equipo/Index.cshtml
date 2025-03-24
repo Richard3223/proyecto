@@ -1,0 +1,35 @@
+﻿@model List<proyecto.Models.Equipo>
+
+@{
+    ViewData["Title"] = "Equipos";
+}
+
+<h1>Equipos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equipo in Model)
+        {
+            <tr>
+                <td>@equipo.Nombre</td>
+                <td>@equipo.Descripcion</td>
+                <td>@equipo.Tipo</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = equipo.Id })">Ver</a> |
+                    <a href="@Url.Action("Edit", new { id = equipo.Id })">Editar</a> |
+                    <a href="@Url.Action("Delete", new { id = equipo.Id })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create")">Agregar Equipo</a>

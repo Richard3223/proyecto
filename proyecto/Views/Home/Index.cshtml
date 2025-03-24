@@ -1,0 +1,25 @@
+﻿@model IEnumerable<proyecto.Models.Equipo>  
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Equipos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equipo in Model)
+        {
+            <tr>
+                <td>@equipo.Nombre</td>
+                <td>@equipo.Descripcion</td>
+            </tr>
+        }
+    </tbody>
+</table>
